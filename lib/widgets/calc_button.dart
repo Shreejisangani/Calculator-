@@ -8,13 +8,14 @@ class CalButton extends StatelessWidget {
   final int textColor;
   final double textSize;
   final int fillColor;
+  final Function callBack;
 
   const CalButton(
       {Key? key,
       required this.text,
       this.textColor = 0xFFFFFFFF,
       this.textSize = 27,
-      this.fillColor=0xFF546E7A})
+      this.fillColor=0xFF546E7A, required this.callBack})
       : super(key: key);
 
   @override
@@ -22,7 +23,9 @@ class CalButton extends StatelessWidget {
     return ElevatedButton(
       
         // ignore: avoid_print
-        onPressed: () {},
+        onPressed: () {
+          callBack(text);
+        },
         child: Text(
           text,
           style: GoogleFonts.lato(color: Color(textColor),textStyle: TextStyle(fontSize: textSize)),
