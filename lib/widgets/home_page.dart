@@ -34,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void clear(String text){
     setState(() {
+      _history =_expression;
       _expression='';
     });
   }
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   text: "%",
                   fillColor: 0xFFFFFFFF,
                   textColor: 0xFF546E7A,
-                  callBack: numClick,
+                  callBack: numClick, 
                 ),
                 CalButton(
                   text: "/",
